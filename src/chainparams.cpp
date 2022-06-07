@@ -113,7 +113,7 @@ public:
         genesis = CreateGenesisBlock(1654637798, 2083236893, 0x1d00ffff, 1, 50 * COIN);
         genesis.nNonce = 0;
         consensus.hashGenesisBlock = uint256S("0x0");
-        for(genesis.nNonce=0;genesis.GetHash() > consensus.powLimit; genesis.nNonce++){
+        for(genesis.nNonce=0;!(genesis.GetHash() < consensus.powLimit); genesis.nNonce++){
         }
         LogPrintf("New Mainnet Block: %s\n", genesis.GetHash());
         LogPrintf("New Mainnet Merkle Root: %s\n", genesis.hashMerkleRoot);
