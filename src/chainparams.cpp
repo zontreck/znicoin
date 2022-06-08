@@ -12,7 +12,6 @@
 #include <script/interpreter.h>
 #include <util/string.h>
 #include <util/system.h>
-#include <util/time.h>
 
 #include <assert.h>
 
@@ -113,7 +112,6 @@ public:
 
         genesis = CreateGenesisBlock(1654637798, 2083236893, 0x1d00ffff, 1, 50 * COIN);
         genesis.nNonce = 0;
-        genesis.nTime = GetTime();
         consensus.hashGenesisBlock = uint256S("0x0");
 
         // What we want, is for the Hash to be less than the Proof of Work Limit
