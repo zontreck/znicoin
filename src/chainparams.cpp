@@ -115,8 +115,7 @@ public:
         consensus.hashGenesisBlock = uint256S("0x0");
 
         // What we want, is for the Hash to be less than the Proof of Work Limit
-        for(genesis.nNonce=0; genesis.GetHash().Compare(consensus.powLimit) > 0; genesis.nNonce++){
-        }
+        //for(genesis.nNonce=0; genesis.GetHash().Compare(consensus.powLimit) > 0; genesis.nNonce++){}
         LogPrintf("New Mainnet Block: %s\n", genesis.GetHash());
         LogPrintf("New Mainnet Merkle Root: %s\n", genesis.hashMerkleRoot);
         LogPrintf("New Mainnet Nonce: %s\n", genesis.nNonce);
